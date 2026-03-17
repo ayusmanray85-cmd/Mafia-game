@@ -151,7 +151,7 @@ export function DayPhase({ gameState, myId, actions }: PhaseProps) {
     const interval = setInterval(() => {
       const remaining = Math.max(0, Math.floor((gameState.timerEnd! - Date.now()) / 1000));
       setTimeLeft(remaining);
-      if (remaining === 0) clearInterval(interval);
+      if (remaining === 0) { clearInterval(interval); }
     }, 1000);
     return () => clearInterval(interval);
   }, [gameState.timerEnd]);
