@@ -14,7 +14,11 @@ export function useSocket() {
     if (!globalSocket) {
       globalSocket = io({
         path: "/api/socket.io",
-        transports: ["websocket", "polling"],
+        transports: ["websocket"],   // skip HTTP polling upgrade — direct WS, zero extra round-trip
+        upgrade: false,              // stay on WebSocket, never downgrade
+        reconnectionDelay: 300,      // retry in 300ms instead of default 1s
+        reconnectionDelayMax: 1500,  // cap at 1.5s instead of default 5s
+        timeout: 5000,               // fail fast if server unreachable
       });
     }
 
