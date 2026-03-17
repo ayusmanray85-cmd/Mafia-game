@@ -1,0 +1,21 @@
+packages:
+  "framer-motion": "For smooth phase transitions and card flip animations"
+  "canvas-confetti": "For the winning screen celebration"
+  "@types/canvas-confetti": "Types for canvas-confetti"
+  "socket.io-client": "Real-time communication with backend"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility to merge tailwind classes safely"
+  "lucide-react": "Beautiful icons for roles and actions"
+
+images:
+  - path: "artifacts/mafia-game/public/images/gothic-bg.png"
+    description: "Dark, moody, atmospheric gothic wallpaper with subtle damask patterns and vignette edges, deep charcoal and navy tones"
+    aspect_ratio: "16:9"
+  - path: "artifacts/mafia-game/public/images/card-back.png"
+    description: "Ornate, gothic tarot card back design with intricate gold foil patterns on a dark navy background, symmetrical"
+    aspect_ratio: "3:4"
+
+notes:
+  - Socket.io server path is /api/socket.io
+  - All game state is driven by the server's broadcasted 'gameState' events
+  - App uses dark mode inherently based on the design requirements
