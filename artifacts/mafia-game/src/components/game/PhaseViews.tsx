@@ -143,6 +143,7 @@ export function RoleRevealPhase({ gameState, myId, actions }: PhaseProps) {
 
 // ---------------- DAY PHASE ----------------
 export function DayPhase({ gameState, myId, actions }: PhaseProps) {
+  if (!gameState) return null;
   const isHost = gameState.hostId === myId;
   const [timeLeft, setTimeLeft] = useState(0);
 
