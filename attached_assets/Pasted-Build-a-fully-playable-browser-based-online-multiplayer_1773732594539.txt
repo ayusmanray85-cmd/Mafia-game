@@ -1,0 +1,75 @@
+Build a fully playable browser-based online multiplayer Mafia party game as a single React (.jsx) 
+or HTML file. The game must include the following:
+
+---
+
+## CORE GAMEPLAY
+
+### Roles (randomly assigned at game start):
+- **Mafia** (1–2 players depending on total count)
+- **Doctor** (1 player) — can save one player per night
+- **Detective** (1 player) — can investigate one player per night
+- **Villagers** (remaining players)
+
+### Game Flow:
+1. **Setup Screen** — Host enters player names (min 4, max 12). 
+   The game auto-assigns roles secretly.
+2. **Role Reveal** — Each player taps to privately see their role 
+   (one at a time, with a "hide" button so others can't see).
+3. **Day Phase** — All players are shown. A discussion timer 
+   (2-minute countdown) runs. Players vote to eliminate one suspect. 
+   Show vote tally. Majority vote eliminates a player.
+4. **Night Phase** — Dark screen with moon/stars. Each role acts:
+   - Mafia: selects a player to kill
+   - Doctor: selects a player to save
+   - Detective: investigates a player (result shown only to detective)
+   Each action is taken secretly (show only that role's screen).
+5. **Dawn Announcement** — Reveal what happened overnight 
+   (who was killed, or "no one died" if Doctor saved them). 
+   Do NOT reveal who did what.
+6. **Win Conditions:**
+   - Mafia wins if Mafia ≥ remaining Villagers
+   - Villagers win if all Mafia are eliminated
+7. Loop Day/Night until a win condition is met.
+
+---
+
+## UI / UX REQUIREMENTS
+
+- Dark, atmospheric theme — think dark wood table, candlelight, shadows
+- Night phase: full dark screen with stars/moon animation
+- Day phase: warm sepia/golden tones, town square vibe
+- Smooth animated transitions between phases
+- Clear role cards with icons (🔪 Mafia, 🩺 Doctor, 🔍 Detective, 👤 Villager)
+- Player status indicators: Alive / Eliminated (with skull icon)
+- A game log/event history panel showing past events
+- Mobile-friendly layout (players often use phones)
+- Sound effect hooks (optional, can be visual cues instead)
+- Confetti or dramatic animation on win screen
+
+---
+
+## TECHNICAL REQUIREMENTS
+
+- Single-file React (.jsx) with Tailwind for styling
+- All state managed in React (useState, useReducer)
+- No backend needed — fully client-side
+- Randomized role assignment logic
+- Voting system with tie-breaking (revote or random if tied)
+- Phase management state machine (setup → roleReveal → day → vote 
+  → night → mafia → doctor → detective → dawn → repeat)
+
+---
+
+## AESTHETIC DIRECTION
+
+Gothic mystery meets cozy board game night. Think:
+- Deep navy and charcoal backgrounds
+- Amber/candlelight accent colors  
+- Serif display font for headings (e.g. Playfair Display via Google Fonts)
+- Subtle parchment textures
+- Animated flickering effects for night scenes
+- Player cards that look like playing cards or tarot cards
+
+Make it feel like a real product, not a prototype. 
+Every screen should be polished and intentional.
