@@ -5,7 +5,11 @@
   "type": "module",
   "scripts": {
     "hello": "tsx ./src/hello.ts",
+    "test-mafia": "tsx ./src/test-mafia-game.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "socket.io-client": "^4.8.1"
   },
   "devDependencies": {
     "@types/node": "catalog:",
