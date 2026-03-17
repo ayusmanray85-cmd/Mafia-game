@@ -12,7 +12,7 @@ export function useSocket() {
 
   useEffect(() => {
     if (!globalSocket) {
-      globalSocket = io({
+      globalSocket = io(import.meta.env.VITE_BACKEND_URL || "", {
         path: "/api/socket.io",
         transports: ["websocket"],   // skip HTTP polling upgrade — direct WS, zero extra round-trip
         upgrade: false,              // stay on WebSocket, never downgrade
